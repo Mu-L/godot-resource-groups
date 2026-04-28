@@ -19,9 +19,34 @@ Resource groups are defined with path expressions and wildcards so they are resi
 
 ## Installation
 
+### Godot Asset Library
+
 The easiest way to install the plugin is to use the Godot Asset Library directly in Godot. Search for "Godot Resource Groups" and install the plugin. You can exclude the `godot_resource_groups_examples` folder if you don't need the examples. 
 
+### Godot Goodie Grabber (GGG)
+
+If you use [Godot Goodie Grabber](https://godotneers.github.io/ggg) to manage your project's dependencies, you can add Godot Resource Groups directly from the asset library using its asset ID `2348`:
+
+```bash
+ggg add asset --id 2348 --name "godot_resource_groups"
+ggg sync
+```
+
+This installs the plugin - including the example - into your project's `addons` folder. If you don't want the examples, edit the resulting entry in `ggg.toml` to add an `exclude` section:
+
+```toml
+[[dependency]]
+name     = "godot_resource_groups"
+asset_id = 2348
+exclude = ["godot_resource_groups_examples"]
+```
+Run `ggg sync` again after editing `ggg.toml` to apply the change.
+
+### Manually
+
 You can also download a ZIP file of this repository from the [release page](https://github.com/derkork/godot-resource-groups/releases) and extract it, then copy the `addons/godot_resource_groups` folder into your project's `addons` folder.
+
+### After installation
 
 After you installed it, make sure you enable the plugin in the project settings:
 
